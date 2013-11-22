@@ -38,15 +38,16 @@
 		}
 		function draw() {
 			var time = new Date().getTime() * 0.002;
-			if (count <= 20 && !firstStrokeDone) {
-				context.fillRect(50 + count, 10, 10, 10);
+			/* how quick you make things move really depends on how quick you draw them. in here changing to a smaller count meant that we were done quicker*/
+			if (count <= 10 && !firstStrokeDone) {
+				context.fillRect(50 + count * 2, 10, 10, 10);
 				count++;
-				if (count === 21) {
+				if (count === 11) {
 					firstStrokeDone = true;
 					count = 0;
 				}
-			} else if (firstStrokeDone && count < 50) {
-				context.fillRect(70, 10 - count, 10, 10);
+			} else if (firstStrokeDone && count < 25) {
+				context.fillRect(70, 10 - count * 2, 10, 10);
 				count++;
 			}
 		}
