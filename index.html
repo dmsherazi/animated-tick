@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-	<h4>tick.</h4>	
+		
 	<canvas class="tick" height="100" width="100"></canvas>
 	<script type="text/javascript">
 		window.requestAnimFrame = (function(){
@@ -28,7 +28,7 @@
 			count = 0;
 			canvas = document.querySelector('canvas');
 			context = canvas.getContext('2d');
-			context.fillStyle = "#00FF00";
+			context.fillStyle = "#33b5e5";
 			context.rotate((Math.PI / 180) * 45);
 		}
 		function animate() {
@@ -37,7 +37,7 @@
 
 		}
 		function draw() {
-			var time = new Date().getTime() * 0.002;
+			var time = new Date().getTime() * 0.1;
 			/* how quick you make things move really depends on how quick you draw them. in here changing to a smaller count meant that we were done quicker*/
 			if (count <= 10 && !firstStrokeDone) {
 				context.fillRect(50 + count * 2, 10, 10, 10);
@@ -54,4 +54,5 @@
 
 	</script>
 </body>
+
 </html>
